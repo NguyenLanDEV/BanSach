@@ -18,7 +18,8 @@ class CreateSanPhamsTable extends Migration
             $table->string('tenSP');
             $table->double('gia')->default(0);
             $table->integer('soLuong')->default(0);
-            $table->integer('maTG');
+            $table->integer('maTG')->default(1);
+            $table->integer('maNhomSP');
             $table->text('moTa')->nullable();
             $table->integer('soTrang')->default(0);
             $table->string('loaiBia')->nullable();

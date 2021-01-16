@@ -17,9 +17,7 @@ class CreateDanhMucSPTable extends Migration
             $table->softDeletes();
             $table->id();
             $table->string('tenDM');
-            $table->integer('maDM');
             $table->timestamps();
-
         });
     }
 
