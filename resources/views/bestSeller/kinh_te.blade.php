@@ -1,6 +1,6 @@
-<div class="row single__tab tab-pane fade" id="nav-tre-em" role="tabpanel">
+<div class="row single__tab tab-pane fade" id="nav-kin-te" role="tabpanel">
     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-        @foreach ($newProducts['tre_em'] as $sach)
+        @foreach ($newProducts['kinh_te'] as $sach)
             <div class="single__product">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="product product__style--3">
@@ -8,7 +8,8 @@
                             <a class="first__img" href="single-product.html"><img
                                     src=" @php echo $sach->avatar['duongDan'] ?  asset($sach->avatar['duongDan'])  : asset('images/books/1.jpg') @endphp"
                                     alt="product image"></a>
-
+                            <a class="second__img animation1" href="single-product.html"><img src="images/books/1.jpg"
+                                    alt="product image"></a>
                             <div class="hot__box">
                                 <span class="hot-label">BEST SALLER</span>
                             </div>
@@ -37,7 +38,15 @@
                                     </ul>
                                 </div>
                             </div>
-
+                            <div class="product__hover--content">
+                                <ul class="rating d-flex">
+                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

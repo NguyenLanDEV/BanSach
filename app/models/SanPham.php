@@ -12,4 +12,12 @@ class SanPham extends Model
     protected $attributes = [];
     protected $protected = ['maLoai', 'tenSP','gia','soLuong','maTG','moTa','soTrang','loaiBia','kichThuoc','canNang','ngonNgu','NXB','namXB','dichGia'];
     public $incrementing = true;
+
+    function avatar(){
+        return $this->hasOne(HinhAnh::class,'id');
+    }
+
+    function avatars(){
+        return $this->hasMany(HinhAnh::class,'maSP');
+    }
 }
