@@ -15,9 +15,9 @@ class CreateNhomSPTable extends Migration
     {
         Schema::create('NhomSP', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('tenNSP');
             $table->integer('maDM');
+            $table->timestamps();
             $table->softDeletes();
 
         });

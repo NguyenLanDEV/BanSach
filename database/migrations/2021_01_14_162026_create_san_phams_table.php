@@ -29,6 +29,7 @@ class CreateSanPhamsTable extends Migration
             $table->integer('NXB')->nullable();
             $table->string('dichGia')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

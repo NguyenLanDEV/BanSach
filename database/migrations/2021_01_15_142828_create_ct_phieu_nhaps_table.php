@@ -23,6 +23,7 @@ class CreateCTPhieuNhapsTable extends Migration
             $table->integer('tongTien');
             $table->text('ghiChu')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

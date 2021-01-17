@@ -20,6 +20,7 @@ class CreateBinhLuansTable extends Migration
             $table->text('noiDung');
             $table->date('ngayBL');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

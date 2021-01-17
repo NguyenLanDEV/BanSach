@@ -19,6 +19,7 @@ class CreateNhaCungCapsTable extends Migration
             $table->string('sdt',10)->nullable();
             $table->string('diaChi')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
