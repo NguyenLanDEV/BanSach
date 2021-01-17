@@ -1,7 +1,8 @@
 <?php
 
+use App\models\SanPham;
+use App\Repositories\SanPhamRepository;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/','HomeController@index');
+
+Route::resource('Sach', 'SanPhamController');
+
+Route::get('/product/{sach}',function(SanPham $sach,SanPhamRepository $sanPhamRepository){
+    $sach->avatars;
+    $data['sach'] = $sach->toArray();
+    $data['title'] = $sach['tenSP'];
+    $data['related_product'] =  $sanPhamRepository->getRelatedProducts(['avatar']);
+    return view('detail',$data);
+})->name('product.show');
