@@ -20,8 +20,11 @@ class SanPham extends Model
     function avatars(){
         return $this->hasMany(HinhAnh::class,'maSP');
     }
+<<<<<<< HEAD
 
     function ctDonHang(){
         return $this->hasMany(CTDonHang::class,'maSP');
     }
+=======
+>>>>>>> 2597cce...  tạm commit
 }
