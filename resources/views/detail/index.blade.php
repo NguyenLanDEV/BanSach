@@ -8,11 +8,7 @@
                 <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                     <div class="logo">
                         <a href="index.html">
-<<<<<<< HEAD
                             <img src="{{asset('images/logo/logo.png')}}" alt="logo images">
-=======
-                            <img src="images/logo/logo.png" alt="logo images">
->>>>>>> 2597cce...  tạm commit
                         </a>
                     </div>
                 </div>
@@ -377,10 +373,14 @@
                     @show
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 @include('detail.shop_slidebar')
 =======
 
 >>>>>>> 2597cce...  tạm commit
+=======
+
+>>>>>>> 0687456d36df1cede3ea9932173e0a7406846020
             </div>
         </div>
     </div>
