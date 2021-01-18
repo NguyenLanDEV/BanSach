@@ -13,7 +13,7 @@ class CreateTacGiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tacGia', function (Blueprint $table) {
+        Schema::create('TacGia', function (Blueprint $table) {
             $table->id();
             $table->string('tenTG', 100)->nullable();
             $table->string('diaChi', 100)->nullable();
