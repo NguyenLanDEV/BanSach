@@ -14,11 +14,10 @@ class CreateDanhMucSPTable extends Migration
     public function up()
     {
         Schema::create('DanhMucSP', function (Blueprint $table) {
-            $table->softDeletes();
             $table->id();
             $table->string('tenDM');
-            $table->integer('maDM');
             $table->timestamps();
+            $table->softDeletes();
 
         });
     }

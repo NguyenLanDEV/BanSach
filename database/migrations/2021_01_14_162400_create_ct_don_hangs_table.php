@@ -21,6 +21,7 @@ class CreateCtDonHangsTable extends Migration
             $table->integer('tongTienCT');
             $table->integer('soLuong');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

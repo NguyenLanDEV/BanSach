@@ -19,7 +19,7 @@ class CreatePhieuNhapsTable extends Migration
             $table->date('ngayNhap');
             $table->integer('tongTien');
             $table->text('ghiChu')->nullable();
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

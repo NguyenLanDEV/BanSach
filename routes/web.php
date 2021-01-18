@@ -1,7 +1,7 @@
 <?php
 
+use App\models\SanPham;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
+Route::get('/','HomeController@index');
+
+Route::get('/product/{sach}',function(SanPham $sach){
+    $sach->avatars;
+    $sach->avatar;
+    $data['sach'] = $sach->toArray();
+    $data['title'] = $sach['tenSP'];
+    // dd($data);
+    return view('detail',$data);
 });

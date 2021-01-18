@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\SanPhamRepository;
+use App\Services\HomeService;
 
 class HomeController extends Controller
 {
+    function __construct()
+    {
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(HomeService $homeService)
     {
-        //
+        $data['newProducts'] = $homeService->getNewProducs();
+        $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
+        return view('homepage', $data);
     }
 
     /**

@@ -27,6 +27,7 @@ class CreateDonHangsTable extends Migration
             $table->date('ngayGiao');
             $table->integer('maTT')->nullable(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

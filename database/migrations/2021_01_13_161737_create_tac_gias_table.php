@@ -14,13 +14,13 @@ class CreateTacGiasTable extends Migration
     public function up()
     {
         Schema::create('tacGia', function (Blueprint $table) {
-            $table->softDeletes();
             $table->id();
             $table->string('tenTG', 100)->nullable();
             $table->string('diaChi', 100)->nullable();
             $table->string('sdt', 10)->nullable();
             $table->text('gioiThieu')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

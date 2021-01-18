@@ -17,6 +17,7 @@ class CreateTrangThaisTable extends Migration
             $table->id();
             $table->string('tenTH');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

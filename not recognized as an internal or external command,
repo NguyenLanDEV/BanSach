@@ -1,0 +1,29 @@
+[33mcommit c60f438d495aba887957574d8368ba87b99fab74[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: lanHALOVI <nguyenthelandev@gmail.com>
+Date:   Sun Jan 17 00:44:38 2021 +0700
+
+    remove loaiSP and add seeder
+
+[33mcommit 2ab25bfe57f81c4137dbbeec04368b0f6a9e989e[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: lanHALOVI <nguyenthelandev@gmail.com>
+Date:   Sat Jan 16 23:03:55 2021 +0700
+
+    build base homepage
+
+[33mcommit ce84c882a3327238c4efefe9852dc2e57bfcb883[m
+Author: lanHALOVI <nguyenthelandev@gmail.com>
+Date:   Fri Jan 15 23:40:23 2021 +0700
+
+    create base controller
+
+[33mcommit fa8dcd36d13b4dddcb6db94d6594b65c95fc5fd9[m
+Author: lanHALOVI <nguyenthelandev@gmail.com>
+Date:   Fri Jan 15 22:53:07 2021 +0700
+
+    create database
+
+[33mcommit cab7343584a025de4bae2e816f578bf8b9ef6355[m
+Author: lanHALOVI <nguyenthelandev@gmail.com>
+Date:   Wed Jan 13 21:52:35 2021 +0700
+
+    initial commit
