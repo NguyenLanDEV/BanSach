@@ -372,15 +372,8 @@
 
                     @show
                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                 @include('detail.shop_slidebar')
-=======
 
->>>>>>> 2597cce...  tạm commit
-=======
-
->>>>>>> 0687456d36df1cede3ea9932173e0a7406846020
             </div>
         </div>
     </div>
