@@ -11,7 +11,7 @@ class CTDonHang extends Model
 
     protected $table = 'CTDonHang';
     protected $attributes = [];
-    protected $protected = ['maDH', 'maSP', 'gia', 'tongTienCT', 'soLuong'];
+    protected $protected = ['maDH', 'maSP', 'tongTienCT', 'soLuong'];
     public $incrementing = true;
 
     function sachs(){

@@ -17,7 +17,6 @@ class CreateCtDonHangsTable extends Migration
             $table->id();
             $table->integer('maDonHang');
             $table->integer('maSP');
-            $table->integer('gia');
             $table->integer('tongTienCT');
             $table->integer('soLuong');
             $table->timestamps();
