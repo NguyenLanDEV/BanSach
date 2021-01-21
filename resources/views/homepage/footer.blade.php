@@ -34,7 +34,39 @@
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/active.js') }}"></script>
+<script type="text/javascript">
 
+    $('.add_to_links a i').on('click',function(event){
+        event.stopPropagation()
+        event.preventDefault()
+    })
+
+    function getCfrfToken(){
+        return `{{ csrf_token() }}`;
+    }
+
+    function getID(){
+        form = $(this).parent().parent().siblings('form')[0];
+        return $(form).find('input[name="id"]').val()
+    }
+
+    $('.bi-shopping-cart-full').on('click',function(event){
+        context = this;
+        id = getID.apply(context)
+        $.ajax({
+            method: 'put',
+            data: {_token : getCfrfToken(),id: id},
+            url: `Cart/${id}`,
+            success: function(data){
+
+            }
+        })
+    })
+
+    function deleteCart(){
+
+    }
+</script>
 </body>
 
 </html>

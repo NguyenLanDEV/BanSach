@@ -1,6 +1,6 @@
 <div class="row single__tab tab-pane fade" id="nav-van-hoc" role="tabpanel">
     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-        @foreach ($newProducts['van_hoc'] as $sach)
+        @foreach ($data['newProducts']['van_hoc']  as $sach)
             <div class="single__product">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="product product__style--3">

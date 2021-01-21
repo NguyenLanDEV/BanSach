@@ -1,6 +1,7 @@
 <div class="row single__tab tab-pane fade  show active" id="nav-ky-nang" role="tabpanel">
     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-        @foreach ($newProducts['ky_nang'] as $sach)
+        {{-- @php dd($data) @endphp --}}
+        @foreach ($data['newProducts']['ky_nang'] as $sach)
             <div class="single__product">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="product product__style--3">
@@ -13,20 +14,20 @@
                             </div>
                         </div>
                         <div class="product__content content--center">
-                            <h4><a href="single-product.html">{{ $sach['tenSP'] }}</a></h4>
+                            <h4><a href="">{{ $sach['tenSP'] }}</a></h4>
                             <ul class="prize d-flex">
                                 <li>{{ number_format( $sach['gia'],0,'.',',')  }} VNĐ</li>
                                 <li class="old_prize">$35.00</li>
                             </ul>
                             <div class="action">
                                 <div class="actions_inner">
-                                    <form>
-                                        <input name="id" type="hidden" value="{{ $sach['id'] }}">
-                                    </form>
                                     <ul class="add_to_links">
+                                        <form>
+                                            <input name="id" type="hidden" value="{{ $sach['id'] }}">
+                                        </form>
                                         <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a>
                                         </li>
-                                        <li><a class="wishlist" href="wishlist.html"><i
+                                        <li><a class="wishlist" href=""><i
                                                     class="bi bi-shopping-cart-full"></i></a></li>
                                         <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a>
                                         </li>

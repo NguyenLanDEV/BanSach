@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
+use App\models\SanPham;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -68,7 +70,14 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product =  SanPham::find($id);
+        if($product){
+            $oldCart =  $request->session()->get('Cart') ? $request->session()->get('Cart') : null;
+            $newCart = new Cart($oldCart);
+            $newCart->addProduct($id,$product);
+            $request->session()->put('Cart',$newCart);
+            return view('cart.mini_cart',['cart'=>$newCart]);
+        }
     }
 
     /**
@@ -77,8 +86,15 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
-        //
+        $product =  SanPham::find($id)->first();
+        if($product){
+            $oldCart =  $request->session()->get('Cart') ? $request->session()->get('Cart') : null;
+            array_splice($oldCart->products,$id,1);
+            $newCart = new Cart($oldCart);
+            $request->session()->put('Cart',$newCart);
+            return view();
+        }
     }
 }

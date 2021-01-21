@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index');
 
 Route::resource('Sach', 'SanPhamController');
+Route::resource('Cart', 'CartController');
 
 Route::get('/product/{sach}',function(SanPham $sach,SanPhamRepository $sanPhamRepository){
     $sach->avatars;

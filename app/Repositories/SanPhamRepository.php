@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Builder;
 
 class SanPhamRepository
 {
-    function getByID($id)
+    public function getByID($id,$select=[])
     {
+        if($select)
+            return SanPham::select($select)->find($id)->toArray();
+        else
+            return SanPham::find($id)->toArray();
+
     }
 
 

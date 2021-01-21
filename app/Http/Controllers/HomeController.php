@@ -17,11 +17,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(HomeService $homeService)
+    public function index(HomeService $homeService,Request $request)
     {
+        $cart = $request->session()->get('Cart');
         $data['newProducts'] = $homeService->getNewProducs();
         $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
-        return view('homepage', $data);
+        return view('homepage', ['cart' => $cart, 'data' => $data]);
     }
 
     /**

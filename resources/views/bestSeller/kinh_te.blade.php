@@ -1,6 +1,6 @@
 <div class="row single__tab tab-pane fade" id="nav-kin-te" role="tabpanel">
     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-        @foreach ($newProducts['kinh_te'] as $sach)
+        @foreach ($data['newProducts']['kinh_te']  as $sach)
             <div class="single__product">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="product product__style--3">
@@ -28,7 +28,7 @@
                                         </form>
                                         <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a>
                                         </li>
-                                        <li><a class="wishlist" href="wishlist.html"><i
+                                        <li><a class="wishlist" href="#"><i
                                                     class="bi bi-shopping-cart-full"></i></a></li>
                                         <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a>
                                         </li>
