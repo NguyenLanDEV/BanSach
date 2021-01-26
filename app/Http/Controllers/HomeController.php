@@ -25,7 +25,7 @@ class HomeController extends Controller
         $newCart = new Cart($cart);
         $data['newProducts'] = $homeService->getNewProducs();
         $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
-        return view('homepage', ['cart' => $newCart, 'data' => $data]);
+        return view('homepage.index', ['cart' => $newCart, 'data' => $data]);
     }
 
     /**

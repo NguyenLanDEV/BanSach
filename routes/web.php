@@ -27,5 +27,5 @@ Route::get('/product/{sach}',function(SanPham $sach,SanPhamRepository $sanPhamRe
     $data['sach'] = $sach->toArray();
     $data['title'] = $sach['tenSP'];
     $data['related_product'] =  $sanPhamRepository->getRelatedProducts(['avatar']);
-    return view('detail',['data'=>$data,'cart' => $oldCart]);
+    return view('detail.index',['data'=>$data,'cart' => $oldCart]);
 })->name('product.show');
