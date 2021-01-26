@@ -1,6 +1,6 @@
 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
     <div class="product__thumb">
-        <a class="first__img" href="single-product.html">
+        <a class="first__img" href="/product/{{$sach->id}}">
             <img src="@php echo $sach->avatar['duongDan'] ?  asset($sach->avatar['duongDan'])  : asset('images/books/1.jpg') @endphp"
                 alt="product image">
         </a>
