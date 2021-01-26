@@ -79,8 +79,6 @@ class CartController extends Controller
             $miniCart =  view('cart.mini_cart', ['cart' => $newCart])->toHtml();
             return response()->json([
                 'view' => $miniCart,
-                'total' => count($newCart->products),
-                'totalPrice' => number_format($newCart->totalPrice).' vnd',
                 'status' => 200
             ]);
         }
@@ -103,8 +101,6 @@ class CartController extends Controller
             $miniCart =  view('cart.mini_cart', ['cart' => $newCart])->toHtml();
             return response()->json([
                 'view' => $miniCart,
-                'total' => count($newCart->products),
-                'totalPrice' => number_format($newCart->totalPrice).' vnd',
                 'status' => 200
             ]);
         }

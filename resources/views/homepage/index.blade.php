@@ -57,28 +57,8 @@
                             </a>
 								<!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
-									<div class="minicart-content-wrapper">
-										<div class="micart__close">
-											<span>Đóng</span>
-										</div>
-										<div class="items-total d-flex justify-content-between">
-											<span>{{$cart->countAllProducts()}} Sản phẩm</span>
-											<span>Cart Subtotal</span>
-										</div>
-										<div id='total_price' class="total_amount text-right">
-											<span>{{ number_format($cart->totalPrice)}} vnd</span>
-										</div>
-										<div class="mini_action checkout">
-											<a class="checkout__btn" href="cart.html">Go to Checkout</a>
-										</div>
-										<div class="single__items">
-											<div class="miniproduct" id ='mini_cart'>
-                                                @include('cart.mini_cart')
-											</div>
-										</div>
-										<div class="mini_action cart">
-											<a class="cart__btn" href="cart.html">View and edit cart</a>
-										</div>
+									<div id="mini_cart" class="minicart-content-wrapper">
+                                        @include('cart.mini_cart')
 									</div>
 								</div>
 								<!-- End Shopping Cart -->

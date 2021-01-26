@@ -6,7 +6,7 @@
             <div class="col-lg-6 col-12">
                 <div class="wn__fotorama__wrapper">
                     <div class="fotorama wn__fotorama__action" data-nav="thumbs">
-                        @foreach ($sach['avatars'] as $avatar)
+                        @foreach ($data['sach']['avatars'] as $avatar)
                             <a href="{{ asset($avatar['duongDan']) }}"><img src="{{ asset($avatar['duongDan']) }}"
                                     alt=""></a>
                         @endforeach
@@ -16,7 +16,7 @@
             </div>
             <div class="col-lg-6 col-12">
                 <div class="product__info__main">
-                    <h1>{{ $sach['tenSP'] }}</h1>
+                    <h1>{{ $data['sach']['tenSP'] }}</h1>
                     <div class="product-reviews-summary d-flex">
                         <ul class="rating-summary d-flex">
                             <li><i class="zmdi zmdi-star-outline"></i></li>
@@ -27,10 +27,10 @@
                         </ul>
                     </div>
                     <div class="price-box">
-                        <span>{{ number_format($sach['gia'], 0, '.', ',') }} VNĐ</span>
+                        <span>{{ number_format($data['sach']['gia'], 0, '.', ',') }} VNĐ</span>
                     </div>
                     <div class="product__overview">
-                        {{ $sach['moTa'] }}
+                        {{ $data['sach']['moTa'] }}
                     </div>
                     <div class="box-tocart d-flex">
                         <span>Qty</span>
@@ -85,7 +85,7 @@
                     <!-- Start Single Tab Content -->
                     <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
                         <div class="description__attribute">
-                            <p> {{ $sach['moTa'] }} </p>
+                            <p> {{ $data['sach']['moTa'] }} </p>
                         </div>
                     </div>
                     <!-- End Single Tab Content -->
@@ -207,34 +207,8 @@
         <div class="row mt--60">
             <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
                 <!-- Start Single Product -->
-                @foreach ($related_product as $sach)
-                    <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                        <div class="product__thumb">
-                            <a class="first__img" href="single-product.html">
-                                <img src="@php echo $sach->avatar['duongDan'] ?  asset($sach->avatar['duongDan'])  : asset('images/books/1.jpg') @endphp"
-                                    alt="product image">
-                            </a>
-                        </div>
-                        <div class="product__content content--center">
-                            <h4><a href="single-product.html">{{ $sach['tenSP'] }}</a></h4>
-                            <ul class="prize d-flex">
-                                <li>{{ number_format($sach['gia'], 0, '.', ',') }} VNĐ</li>
-                            </ul>
-                            <div class="action">
-                                <div class="actions_inner">
-                                    <ul class="add_to_links">
-                                        <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                        <li><a class="wishlist" href="wishlist.html"><i
-                                                    class="bi bi-shopping-cart-full"></i></a></li>
-                                        <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                        <li><a data-toggle="modal" title="Quick View"
-                                                class="quickview modal-view detail-link" href="#productmodal"><i
-                                                    class="bi bi-search"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                @foreach ($data['related_product'] as $sach)
+                    @include('product.book-related')
                 @endforeach
                 <!-- Start Single Product -->
                 <!-- Start Single Product -->

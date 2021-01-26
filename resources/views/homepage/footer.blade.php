@@ -59,9 +59,7 @@
             url: `Cart/${id}`,
             success: function(data){
                 if(data.status == 200){
-                    $('#mini_cart').html(data.view);
-                    $('#total-products').html(data.total);
-                    $('#total_price').html(`<span>${data.totalPrice}</span>`);
+                    $('#mini_cart').detach($('#mini_cart').html(data.view));
                 }
             }
         })
@@ -74,8 +72,6 @@
             success: function(data){
                 if(data.status == 200){
                     $('#mini_cart').detach($('#mini_cart').html(data.view));
-                    $('#total-products').html(data.total);
-                    $('#total_price').html(`<span>${data.totalPrice}</span>`);
                 }
             }
         })
