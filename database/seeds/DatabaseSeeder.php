@@ -264,7 +264,6 @@ class DatabaseSeeder extends Seeder
             [
                 'maDonHang' => 1,
                 'maSP' => 1,
-                'gia' => 100000,
                 'tongTienCT' => 100000,
                 'soLuong' => 2,
                 'created_at' =>  new DateTime('today'),
@@ -273,7 +272,6 @@ class DatabaseSeeder extends Seeder
             [
                 'maDonHang' => 1,
                 'maSP' => 2,
-                'gia' => 100000,
                 'tongTienCT' => 100000,
                 'soLuong' => 3,
                 'created_at' =>  new DateTime('today'),

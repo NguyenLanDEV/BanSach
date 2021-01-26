@@ -7,7 +7,7 @@
             </div>
             <div class="content">
                 <h6><a href="product-details.html">{{ $item['productInfo']->tenSP }}</a></h6>
-                <span class="prize">{{ number_format($item['price']) VNĐ}}</span>
+                <span class="prize">{{ number_format($item['price']) }}VNĐ</span>
                 <div class="product_prize d-flex justify-content-between">
                     <span class="qun">Qty: {{ $item['quanty'] }}</span>
                     <ul class="d-flex justify-content-end">
