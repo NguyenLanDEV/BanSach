@@ -56,7 +56,19 @@
         $.ajax({
             method: 'put',
             data: {_token : getCfrfToken(),id: id},
-            url: `Cart/${id}`,
+            url: `{{url('Cart')}}/${id}`,
+            success: function(data){
+                if(data.status == 200){
+                    $('#mini_cart').detach($('#mini_cart').html(data.view));
+                }
+            }
+        })
+    }
+    function addCart2(id){
+        $.ajax({
+            method: 'put',
+            data: {_token : getCfrfToken(),id: id},
+            url: `{{url('Cart')}}/${id}`,
             success: function(data){
                 if(data.status == 200){
                     $('#mini_cart').detach($('#mini_cart').html(data.view));
