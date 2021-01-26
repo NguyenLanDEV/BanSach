@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use Illuminate\Http\Request;
 use App\Repositories\SanPhamRepository;
 use App\Services\HomeService;
@@ -19,10 +20,12 @@ class HomeController extends Controller
      */
     public function index(HomeService $homeService,Request $request)
     {
+        // $request->session()->flush('Cart');
         $cart = $request->session()->get('Cart');
+        $newCart = new Cart($cart);
         $data['newProducts'] = $homeService->getNewProducs();
         $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
-        return view('homepage', ['cart' => $cart, 'data' => $data]);
+        return view('homepage', ['cart' => $newCart, 'data' => $data]);
     }
 
     /**

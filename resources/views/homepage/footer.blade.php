@@ -50,21 +50,35 @@
         return $(form).find('input[name="id"]').val()
     }
 
-    $('.bi-shopping-cart-full').on('click',function(event){
-        context = this;
+    function addCart(elem){
+        context = elem;
         id = getID.apply(context)
         $.ajax({
             method: 'put',
             data: {_token : getCfrfToken(),id: id},
             url: `Cart/${id}`,
             success: function(data){
-
+                if(data.status == 200){
+                    $('#mini_cart').html(data.view);
+                    $('#total-products').html(data.total);
+                    $('#total_price').html(`<span>${data.totalPrice}</span>`);
+                }
             }
         })
-    })
-
-    function deleteCart(){
-
+    }
+    function deleteCart(elem,id){
+        $.ajax({
+            method: 'delete',
+            data: {_token : getCfrfToken()},
+            url: `Cart/${id}`,
+            success: function(data){
+                if(data.status == 200){
+                    $('#mini_cart').detach($('#mini_cart').html(data.view));
+                    $('#total-products').html(data.total);
+                    $('#total_price').html(`<span>${data.totalPrice}</span>`);
+                }
+            }
+        })
     }
 </script>
 </body>

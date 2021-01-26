@@ -71,12 +71,18 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $product =  SanPham::find($id);
-        if($product){
+        if ($product) {
             $oldCart =  $request->session()->get('Cart') ? $request->session()->get('Cart') : null;
             $newCart = new Cart($oldCart);
-            $newCart->addProduct($id,$product);
-            $request->session()->put('Cart',$newCart);
-            return view('cart.mini_cart',['cart'=>$newCart]);
+            $newCart->addProduct($id, $product);
+            $request->session()->put('Cart', $newCart);
+            $miniCart =  view('cart.mini_cart', ['cart' => $newCart])->toHtml();
+            return response()->json([
+                'view' => $miniCart,
+                'total' => count($newCart->products),
+                'totalPrice' => number_format($newCart->totalPrice).' vnd',
+                'status' => 200
+            ]);
         }
     }
 
@@ -86,15 +92,21 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,Request $request)
+    public function destroy($id, Request $request)
     {
         $product =  SanPham::find($id)->first();
-        if($product){
+        if ($product) {
             $oldCart =  $request->session()->get('Cart') ? $request->session()->get('Cart') : null;
-            array_splice($oldCart->products,$id,1);
             $newCart = new Cart($oldCart);
-            $request->session()->put('Cart',$newCart);
-            return view();
+            $newCart->deleteByID($id);
+            $request->session()->put('Cart', $newCart);
+            $miniCart =  view('cart.mini_cart', ['cart' => $newCart])->toHtml();
+            return response()->json([
+                'view' => $miniCart,
+                'total' => count($newCart->products),
+                'totalPrice' => number_format($newCart->totalPrice).' vnd',
+                'status' => 200
+            ]);
         }
     }
 }

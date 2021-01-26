@@ -51,25 +51,28 @@
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
 							<li class="shop_search"><a class="search__active" href="#"></a></li>
 							<li class="wishlist"><a href="#"></a></li>
-							<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+							<li class="shopcart">
+                            <a class="cartbox_active" href="#">
+                                <span id='total-products' class="product_qun">{{empty($cart->products) ? 0 : count($cart->products)}}</span>
+                            </a>
 								<!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
 									<div class="minicart-content-wrapper">
 										<div class="micart__close">
-											<span>close</span>
+											<span>Đóng</span>
 										</div>
 										<div class="items-total d-flex justify-content-between">
-											<span>3 items</span>
+											<span>{{$cart->countAllProducts()}} Sản phẩm</span>
 											<span>Cart Subtotal</span>
 										</div>
-										<div class="total_amount text-right">
-											<span>$66.00</span>
+										<div id='total_price' class="total_amount text-right">
+											<span>{{ number_format($cart->totalPrice)}} vnd</span>
 										</div>
 										<div class="mini_action checkout">
 											<a class="checkout__btn" href="cart.html">Go to Checkout</a>
 										</div>
 										<div class="single__items">
-											<div class="miniproduct">
+											<div class="miniproduct" id ='mini_cart'>
                                                 @include('cart.mini_cart')
 											</div>
 										</div>
