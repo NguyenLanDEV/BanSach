@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(
-            \App\Services\HomeService::class,
+            \App\Services\HomeService::class
         );
     }
 
