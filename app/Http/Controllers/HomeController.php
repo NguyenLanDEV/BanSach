@@ -22,6 +22,7 @@ class HomeController extends Controller
     {
         // $request->session()->flush('Cart');
         $cart = $request->session()->get('Cart');
+
         $newCart = new Cart($cart);
         $data['newProducts'] = $homeService->getNewProducs();
         $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
