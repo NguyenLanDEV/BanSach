@@ -9,8 +9,10 @@ use App\Services\HomeService;
 
 class HomeController extends Controller
 {
-    function __construct()
+    public $sanPhamRepository;
+    function __construct(SanPhamRepository $sanPhamRepository)
     {
+        $this->sanPhamRepository = $sanPhamRepository;
     }
 
     /**
@@ -18,13 +20,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(HomeService $homeService,Request $request)
+    public function index(Request $request)
     {
-        // $request->session()->flush('Cart');
+        $with = ['avatar'];
         $cart = $request->session()->get('Cart');
 
         $newCart = new Cart($cart);
-        $data['newProducts'] = $homeService->getNewProducs();
+        $data['newProducts'] =  $this->sanPhamRepository->getNewProducs($with);
         $data['title'] =  env('HOMEPAGE_TITLE', 'Halovi');
         return view('homepage.index', ['cart' => $newCart, 'data' => $data]);
     }
